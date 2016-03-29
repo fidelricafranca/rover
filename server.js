@@ -5,7 +5,7 @@ var url = require('url')
 var fs = require('fs')
 
 
-//setup serialport
+//setup serialport communication to arduino
 var sp = new SerialPort("/dev/ttyACM0", {
   baudrate: 9600
 }, false);
@@ -69,7 +69,19 @@ function handler(req, res){
                 res.writeHead(200,{'Content-Type': 'text/plain'});
                 res.end(data);
             });
-    } else {
+    } else if( /\.(css)$/.test(path) ) {
+          index = fs.readFile(__dirname+'/'+path,
+              function(error,data) {
+
+                  if (error) {
+                      res.writeHead(500);
+                      return res.end("Error: unable to load " + path);
+                  }
+
+                  res.writeHead(200,{'Content-Type': 'text/plain'});
+                  res.end(data);
+              });
+      } else {
     res.writeHead(404);
     res.end("Error 404: File not Found.")
   }

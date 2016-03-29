@@ -1,12 +1,36 @@
 <html>
   <head>
-      <script src="client.js" >
-
-      </script>
+      <script src="client.js" > </script>
+      <link rel="stylesheet" type="text/css" href="style.css" >
   </head>
-  <body>
-    <p> Result: <output type=text id="result" value="" readonly> </output>
-    </p>
-    <input type=text id="msg" onchange="connection.send(this.value)">
+  <body onclick="stop(); front()">
+    <div id="container">
+      <div id="view">
+        <img src="http://192.168.0.103:8080/?action=stream" />
+      </div>
+
+      <div id="controls" >
+        <div class="movement_btn" id="mid" onmouseover="forward(); left()" onmouseout="stop(); front()"></div>
+        <div class="movement_btn" id="forward_btn" onmouseover="forward()" onmouseout="stop()"></div>
+        <div class="movement_btn" id="mid" onmouseover="forward(); right()" onmouseout="stop(); front()"></div>
+          </br>
+        <div class="movement_btn" id="left_btn" onmouseover="left()" ></div>
+        <div class="movement_btn" id="mid" onmouseover="front()"></div>
+        <div class="movement_btn" id="right_btn" onmouseover="right()" ></div>
+          </br>
+        <div class="movement_btn" id="mid" onmouseover="backward(); left()" onmouseout="stop(); front()"></div>
+        <div class="movement_btn" id="backward_btn" onmouseover="backward()" onmouseout="stop()"></div>
+        <div class="movement_btn" id="mid" onmouseover="backward(); right()" onmouseout="stop(); front()"></div>
+      </div>
+    </div>
+
+
+    </br>
+      <div id="log">
+        <p> Result: <output type=text id="result" value="" readonly> </output>
+        </p>
+        <input type=text id="msg" onchange="connection.send(this.value)"></br></br>
+      </div>
+
   </body>
 </html>
