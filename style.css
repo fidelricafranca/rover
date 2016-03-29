@@ -1,0 +1,44 @@
+body {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+div#container {
+  display: block;
+  height: 80%;
+}
+
+div#view{
+  display: inline-block;
+  width: 60%;
+}
+
+div#controls {
+  display: inline-block;
+  width: 30%;
+}
+
+div.movement_btn {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+div#mid {
+  background-color: gray;
+}
+
+div#forward_btn {
+  background-color: blue;
+}
+
+div#backward_btn {
+  background-color: red;
+}
+
+div#left_btn {
+  background-color: yellow;
+}
+
+div#right_btn {
+  background-color: green;
+}
