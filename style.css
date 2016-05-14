@@ -9,21 +9,74 @@ div#container {
 
 div#view{
   display: inline-block;
-  width: 60%;
+  width: 640px;
+  height: 480px;
+  background-color: skyblue;
 }
 
+div#chartContainer{
+  width: 350px;
+  height: 200px;
+}
+
+div#updatesContainer{
+  position: absolute;
+  top: 270;
+}
+
+p#light{
+  margin-top: 25px;
+}
 div#controls {
   display: inline-block;
-  width: 30%;
+  width: 350px;
+}
+.circle{
+  border-radius: 50%;
+  opacity: 0.5;
+  text-align: center;
+}
+
+.MQ2{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 70px;
+  left: 340px;
+  background-color: white;
+}
+
+.light{
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 400px;
+  left: 700;
+  background-color: orange;
+}
+
+.updates{
+  font-size: 15;
+  font-family: monospace;
+  color: white;
+  vertical-align: middle;
+  color: black;
+}
+
+div.head_btn{
+  width: 100px;
+  height: 50px;
+  display: inline-block;
 }
 
 div.movement_btn {
   width: 100px;
   height: 100px;
   display: inline-block;
+  background-color: gray;
 }
 
-div#mid {
+div#default {
   background-color: gray;
 }
 
@@ -41,4 +94,8 @@ div#left_btn {
 
 div#right_btn {
   background-color: green;
+}
+
+div.head_btn {
+  background-color: pink;
 }

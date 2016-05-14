@@ -1,36 +1,50 @@
 <html>
   <head>
       <script src="client.js" > </script>
+      <script src="grapher.js" > </script>
+      <script type="text/javascript" src="grapher/canvasjs.min.js"></script>
       <link rel="stylesheet" type="text/css" href="style.css" >
   </head>
   <body onclick="stop(); front()">
     <div id="container">
       <div id="view">
-        <img src="http://192.168.0.103:8080/?action=stream" />
+	         <img src="http://192.168.0.103:8080/stream/video.mjpeg" />
+           <div id="updatesContainer" >
+             <div id="chartContainer" >
+             </div>
+             <div class="circle MQ2" >
+                <p class="updates" id="reading" >0</p>
+             </div>
+           </div>
+           <div class="circle light" onclick="outtahere()">
+              <p class="updates" id="light" >AUTO OUT</p>
+           </div>
       </div>
-
       <div id="controls" >
-        <div class="movement_btn" id="mid" onmouseover="forward(); left()" onmouseout="stop(); front()"></div>
-        <div class="movement_btn" id="forward_btn" onmouseover="forward()" onmouseout="stop()"></div>
-        <div class="movement_btn" id="mid" onmouseover="forward(); right()" onmouseout="stop(); front()"></div>
-          </br>
-        <div class="movement_btn" id="left_btn" onmouseover="left()" ></div>
-        <div class="movement_btn" id="mid" onmouseover="front()"></div>
-        <div class="movement_btn" id="right_btn" onmouseover="right()" ></div>
-          </br>
-        <div class="movement_btn" id="mid" onmouseover="backward(); left()" onmouseout="stop(); front()"></div>
-        <div class="movement_btn" id="backward_btn" onmouseover="backward()" onmouseout="stop()"></div>
-        <div class="movement_btn" id="mid" onmouseover="backward(); right()" onmouseout="stop(); front()"></div>
+        <div class="row" >
+            <div class="head_btn" id="look_left" onclick="look_left()" ></div>
+            <div class="head_btn" id="loof_front" onclick="look_front()" ></div>
+            <div class="head_btn" id="look_right" onclick="look_right()" ></div>
+        </div>
+        <div class="row" >
+            <div class="movement_btn" id="mid" onmouseover="forward(); left()" onmouseout="stop(); front()"></div>
+            <div class="movement_btn" id="forward_btn" onmouseover="forward(); front()" onmouseout="stop()"></div>
+            <div class="movement_btn" id="mid" onmouseover="forward(); right()" onmouseout="stop(); front()"></div>
+        </div>
+        <div class="row" >
+            <div class="movement_btn" id="left_btn" onmouseover="right(); left()" ></div>
+            <div class="movement_btn" id="mid" onmouseover="" onclick="outtahere()"></div>
+            <div class="movement_btn" id="right_btn" onmouseover="left; right()" ></div>
+        </div>
+        <div class="row" >
+            <div class="movement_btn" id="mid" onmouseover="backward(); left()" onmouseout="stop(); front()"></div>
+            <div class="movement_btn" id="backward_btn" onmouseover="backward(), front()" onmouseout="stop()"></div>
+            <div class="movement_btn" id="mid" onmouseover="backward(); right()" onmouseout="stop(); front()"></div>
+        </div>
       </div>
     </div>
 
-
-    </br>
-      <div id="log">
-        <p> Result: <output type=text id="result" value="" readonly> </output>
-        </p>
-        <input type=text id="msg" onchange="connection.send(this.value)"></br></br>
-      </div>
+  </div>
 
   </body>
 </html>
